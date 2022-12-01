@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sistemas Fluidomecânicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titulo-principal">Calculadora de Sistemas Fluidomecânicos</h1>
+
+    <h1 id="subtitulo">Número de Reynolds</h1>
+    <p id="formula1">Fórmula com massa específica do fluído (kg/m³) e viscosidade dinâmica do fluido.</p>
+    <img src="data:image/png;base64,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" alt="" height="100px">
+    <input type="number" id="massa-fluido" placeholder="D"> x
+    <input type="number" id="velocidade-fluido" placeholder="V"> x
+    <input type="number" id="diametro-interno" placeholder="p"> /
+    <input type="number" id="viscosidade-fluido" placeholder="u">
+    <input type="button" value="calcular" onclick="calcular1()">
+    <div id="res1"></div>
+
+    <p>Fórmula com viscosidade cinemática do fluido (m²/s).</p>
+    <input type="number" id="velocidade-flu" placeholder="D"> x
+    <input type="number" id="diametro-inter" placeholder="V"> /
+    <input type="number" id="cinematica-fluido" placeholder="v">
+    <input type="button" value="calcular" onclick="calcular2()">
+    <div id="res2"></div>
+
+    <h1>Vazão</h1>
+    <input type="number" id="velo" placeholder="V"> x
+    <input type="number" id="area" placeholder="A">
+    <input type="button" value="calcular" onclick="calcular10()">
+    <div id="res10"></div>
+
+    <h1>Velocidade do fluído (m/s)</h1>
+    <img src="https://thermal-engineering.org/wp-content/uploads/2019/05/superficial-velocity-definition.png" alt="" height="170px">
+    <input type="number" id="vazao" placeholder="Q"> /
+    <input type="number" id="area-interna" placeholder="A">
+    <input type="button" value="calcular" onclick="calcular3()">
+    <div id="res3"></div>
+
+    <h1>Rugosidade relativa</h1>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAABPCAMAAABmtAgHAAAAQlBMVEX///8AAAC96Pj22KP9+th5td4ObLYBAFWlXSfiqmYAACROAAC/g0gmYZkAKoVtHACxno97OB8cAAACG2PZ1dRfUIheJ5UnAAAFIUlEQVR4nO1b7YKiMAwEWhCkKqC+/6tevlpawaLunrveZf6guCXpNE0mwBaFQqFQKBQKhUKhUCgUCoVCoVAoFKuww3DaH+rqp/34BJjxXBe2LY/K1iZsu6/hYHo6KLIw/Q5DyrqDRtYmhCzFI5BtqHgIpj3Xl8ug4fUI7DCer1gRFZuAbfhqajdDe1dvgCB5S6zawb0x53bTXWNd6XFck6ymL++Ls2fI2rCTgzmV5RvJcsGYXRoFXxo8wB+tbdPuu5Tshp3s0HdWczNJNbQrOR6EfSPHtVmsknV5wYkNOzm8lSzbTfvDBTCseOkngVuuWf68Rpa5vuJE3k4Ob9aJZhin/XU1W8yTgH2y/IMVsmz75GQfsZPD7xHVT0dWGPCtdnL4jWRNQeebFqsWffRkQWIuSYCYkYpaIxUd62VJV4A/oGQUDd604yYYAxe1UPHwrJl89bVDzz8VQhbYJf0DYgZsd71XQ3Y4lfLZ4n2oynAfPMHob5fhfhLgjMQQNdwGtFlElukPKEFIK3Q0wEpFt66UyZtrdTM4b6foUCZ3PV3UjnwVb2/Ey4CJkhZkV3VAY3nmxWngWoADXw45PtEyoWnr8KOls/cl4tfI4kWRObAXfEOHnbcj8TLKKb+fdvE0C1PfDt6ww1WRl8D3r96eLItcbTfUyJ03j4WKxaNtZRTyONJnhzxxEF4XZJUzXiQLMWt8sWlZF7HzzItM6Ias8N1Vt4OzdoQQOBKLCVlmaqrZAhzqIjJ/nE8avgZtbTMxtXDG8Tost+HXyWrQ4RCymDcY6LCsdEt+OOEvJQs2AXl/WAzesCN8UlikZIkJy9vLG0rM82/Om0Oy+jloy7/TCPP2QENyoks0Y1QNMcevkVU4XvF6MThrx/ngM5CLF5HFiey0iwJshSw7RmkJY1dqAma7lSLzZUjinbsQt18jyw6QctcjCz5gaFDMu7t3zpZ2Aln9gizJg6ZvNsg6xe0p1MhSqo3FkFuJrsuMxylaTGLeIC5JNz5DnDDC75BFUzP1cvCGnWOkDFKyIPcdsahKRsqQlUYyCg4JXeOlTIIhpKzhcYoWk8BaI1Ymv1qXYk7wNIU7ZEFlaipXLQdv2AmB2SzIAjl1SnXWrXmfs2Rx/C0CCCnvgRmXK/c9kYUzZnfDbOxce8Sne2RBih+EgWTwlh2RHFMdSp2VeOtinZYhq5t2QbdwbJPKMRKRr7QaOYRJhNsBEL+45zgJ3ZJla4oe/DHqQoIwTQfn7YjGLdwxGLLDQIEhCkQg0mEmixPDntSn9BUgqbi/t7h3O16OJ8gq7yP25BRyh/QN1vliTM6QnEF3odGgZsRIGnVlqGyyTYt0cIJVO8iPPKAjuX6uOmqeggIhlvCmSbiCeBROcvdFDPd4JarH3Z7E/BMK/hGyusinglqKhj1gycJON+xoLe7AF3zAjZMLHVI7kxMGx7hjp8WSNacYGNbRd6prImLZ0K6mS+yv7BFLXFLKoYk0FfSabPpSDW1Ief88wi5eaVkUKUwI1LWbu4oYUX43i+SnSIENkKitt76eMT+DKg8fE9HWhfT+Zpd9zcZbih/zgpYZ+h+gKr5nDp/0DZE8ogcMLzyz+88QP40xH7QTfwTJoyunGzGLhCzoX767E/+nkJKl+zCLhCzoSn/L091fCSXrCdyS9Z7X9T4Uac7qn32F5f+CVsMnoDrrCdwo+MXrLYoIaW+o6T2L5K6D/uNAHvH9LP23sCw+8k6pQqFQKBQKhUKhWOAP/+Q3Spyn3DgAAAAASUVORK5CYII=" width="250px" alt="">
+    <input type="number" id="rugosidade-eq" placeholder="ε"> /
+    <input type="number" id="diametro-int" placeholder="D">
+    <input type="button" value="calcular" onclick="calcular4()">
+    <div id="res4"></div>
+
+    <h1>Perda de carga (pressão) por fricção (m)</h1>
+    <p>DARCY-WEISBACH</p>
+    <img src="https://2.bp.blogspot.com/-1fQLFLPFdeY/V1mgDX8K3rI/AAAAAAAADuI/rT45E-CrrV0Fa7Rduf1yM2q50crOZNwnQCLcB/s1600/equa%25C3%25A7ao-darcy-weisbach.jpg" alt="" width="170px">
+    <input type="number" id="comprimento" placeholder="L"> /
+    <input type="number" id="diametro-i" placeholder="D"> x
+    <input type="number" id="velocidade-f" placeholder="v"> /
+    <input type="number" id="gravidade" placeholder="g"> x
+    <input type="number" id="f" placeholder="f">
+    <input type="button" value="calcular" onclick="calcular5()">
+    <div id="res5"></div>
+
+    <h1>Δ%</h1>
+    <input type="number" id="hp-expe" placeholder="Hp-expe"> -
+    <input type="number" id="hp-teo1" placeholder="Hp-teo"> /
+    <input type="number" id="hp-teo2" placeholder="Hp-teo">
+    <input type="button" value="calcular" onclick="calcular8()">
+    <div id="res8"></div>
+
+    <h1>Transformação PSI para Pascal</h1>
+    <input type="number" id="psi">
+    <input type="button" value="calcular" onclick="calcular6()">
+    <div id="res6"></div>
+    
+    <h1>Transformação de mm(milímetro) para m(metro)</h1>
+    <input type="number" id="milimetro">
+    <input type="button" value="calcular" onclick="calcular7()">
+    <div id="res7"></div>
+
+    <h1>Transformação L/s(litro por segundo) para m³/s(metro cubico por segundo)</h1>
+    <input type="number" id="litro">
+    <input type="button" value="calcular" onclick="calcular9()">
+    <div id="res9"></div>
+
+    <h1>Diâmetro econômico</h1>
+    <img src="https://slideplayer.com.br/slide/1473725/4/images/7/Padroniza-se+o+di%C3%A2metro+atrav%C3%A9s+de+tabelas+padr%C3%B5es..jpg" alt="" width="400px">
+    <input type="number" id="x" placeholder="X"> x
+    <input type="number" id="q" placeholder="Q">
+    <input type="button" value="calcular" onclick="calcular11()">
+    <div id="res11"></div>
+
+    <h1>Sumário</h1>
+    <img src="/sumario.PNG" alt="">
+
+<script src="app.js"></script>
+</body>
+</html>
